@@ -73,6 +73,37 @@ def add_10():
     string += '0'
     result['text'] = string
 
+def delete():
+    global string
+    string=string[:-1]
+    result['text']=string
+
+def plus():
+    global string
+    string += '+'
+    result['text']=string
+
+def minus():
+    global string
+    string += '-'
+    result['text']=string
+
+def multiply():
+    global string
+    string += '×'
+    result['text']=string
+
+def divide():
+    global string
+    string += '÷'
+    result['text']=string
+
+def eqalis():
+    global string
+    string=str(eval(string))
+    result['text']=string
+
+
 btn1 = Button(text = '1', command = add_1)
 btn1.grid(row = 3, column = 0, sticky='NSEW')
 btn2 = Button(text = '2', command = add_2)
@@ -93,16 +124,16 @@ btn9 = Button(text = '9', command = add_9)
 btn9.grid(row = 1, column = 2, sticky='NSEW')
 btn0 = Button(text = '0', command = add_10)
 btn0.grid(row = 4, column = 1, sticky='NSEW')
-btnPlus = Button(text = '+')
+btnPlus = Button(text = '+', command = plus)
 btnPlus.grid(row = 1, column = 3, sticky='NSEW')
-btnMinus = Button(text = '-')
+btnMinus = Button(text = '-', command = minus)
 btnMinus.grid(row = 2, column = 3, sticky='NSEW')
-btnMultiply = Button(text = '×')
+btnMultiply = Button(text = '×', command = multiply)
 btnMultiply.grid(row = 4, column = 3, sticky='NSEW')
-btnDivide = Button(text = '÷')
+btnDivide = Button(text = '÷', command = divide)
 btnDivide.grid(row = 3, column = 3, sticky='NSEW')
-btnEqualis = Button(text = '=')
+btnEqualis = Button(text = '=', command = eqalis)
 btnEqualis.grid(row = 4, column = 2, sticky='NSEW')
-btnDelete = Button(text = '←')
+btnDelete = Button(text = '←', command = delete)
 btnDelete.grid(row = 4, column = 0, sticky='NSEW')
 win.mainloop()
